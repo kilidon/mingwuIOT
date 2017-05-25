@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/*主体颜*/
+/*公共样式*/
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: rgba(9, 53, 88, 0.5); }
+
+a {
+  text-decoration: none; }
+
+.bg-blue {
+  background-color: #126DB5; }
+
+.light-blue {
+  background-color: #58acee; }
+
+.login-wrapper {
+  background-color: #126DB5; }
+  .login-wrapper .card {
+    border-radius: 8px; }
+    .login-wrapper .card .item {
+      background: none;
+      height: 60px;
+      border: none;
+      border-bottom: 1px dashed #58acee; }
+      .login-wrapper .card .item.item:last-child {
+        border: none; }
+      .login-wrapper .card .item .icon {
+        margin-top: 15px;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        color: #126DB5;
+        background-color: #fff;
+        border-radius: 50%; }
+      .login-wrapper .card .item input {
+        height: 100%;
+        font-size: 16px;
+        background: none; }
+      .login-wrapper .card .item .iot-icon-a {
+        padding: 0 20px;
+        border-left: 1px dashed #58acee;
+        right: 70px;
+        background: none;
+        border-radius: 0;
+        font-size: 16px;
+        color: #58acee; }
+      .login-wrapper .card .item .iot-icon-btn {
+        width: 112px;
+        height: 100%;
+        margin-top: 0;
+        display: inline-block;
+        right: 0;
+        text-align: center;
+        line-height: 60px;
+        font-size: 16px;
+        border-radius: 0;
+        color: #fff;
+        background: #58acee; }
+  .login-wrapper .iot-bar-log {
+    min-height: 50px;
+    line-height: 50px; }
+    .login-wrapper .iot-bar-log a {
+      color: #126DB5; }
+      .login-wrapper .iot-bar-log a:first-child {
+        border-right: 1px dashed #58acee; }
+  .login-wrapper div {
+    margin: 0 auto; }
+
+/*# sourceMappingURL=index.css.map */

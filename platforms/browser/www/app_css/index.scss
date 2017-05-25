@@ -1,0 +1,87 @@
+/*主体颜*/
+$primary-blue: #126DB5;
+$light-blue: lighten($primary-blue, 25%);
+
+
+/*公共样式*/
+  //占位符颜色
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: rgba(9, 53, 88, 0.5);
+  }
+  a {
+    text-decoration: none;
+  }
+  .bg-blue{
+    background-color: $primary-blue;
+  }
+  .light-blue{
+    background-color: $light-blue;
+  }
+
+
+.login-wrapper {
+  background-color: $primary-blue;
+  .card {
+    border-radius: 8px;
+    .item {
+      background: none;
+      height: 60px;
+      border: none;
+      border-bottom: 1px dashed $light-blue;
+      &.item:last-child {
+        border: none;
+      }
+      .icon {
+        margin-top: 15px;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        color: $primary-blue;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+      input {
+        height: 100%;
+        font-size: 16px;
+        background: none;
+      }
+      .iot-icon-a {
+        padding: 0 20px;
+        border-left: 1px dashed $light-blue;
+        right: 70px;
+        background: none;
+        border-radius: 0;
+        font-size: 16px;
+        color: $light-blue
+      }
+      .iot-icon-btn {
+        width: 112px;
+        height: 100%;
+        margin-top: 0;
+        display: inline-block;
+        right: 0;
+        text-align: center;
+        line-height: 60px;
+        font-size: 16px;
+        border-radius: 0;
+        color: #fff;
+        background: $light-blue;
+      }
+    }
+  }
+  .iot-bar-log{
+    min-height: 50px;
+    line-height: 50px;
+    a{
+      color: $primary-blue;
+      &:first-child{
+        border-right: 1px dashed $light-blue;
+      }
+    }
+
+  }
+  div {
+    margin: 0 auto
+  }
+}
+
