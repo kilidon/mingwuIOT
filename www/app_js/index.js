@@ -32,6 +32,11 @@ angular.module('myApp',['ionic'])
         templateUrl:'pages/login/register.html',
         controller:'registerCtrl'
       })
+      //首页
+      .state('home',{
+        url:'/Home',
+        templateUrl:'pages/home/home.html'
+      })
       //test
       .state('test',{
         url:'/Test',
@@ -43,10 +48,14 @@ angular.module('myApp',['ionic'])
 
 /*控制器*/
   //全局控制器
-  .controller('parentCtrl',['$scope','$state','$timeout',function ($scope,$state,$timeout) {
+  .controller('parentCtrl',['$scope','$state','$timeout','$ionicHistory',function ($scope,$state,$timeout,$ionicHistory) {
     //跳转方法
     $scope.jump=function (desState,args) {
       $state.go(desState,args)
+    };
+    //浏览记录方法
+    $scope.getPreviousTitle = function() {
+      return $ionicHistory.backTitle();
     };
   }])
   .controller('registerCtrl',['$scope',function ($scope) {
