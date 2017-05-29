@@ -7,7 +7,7 @@ angular.module('myApp',['ionic'])
     .service('$acjHttp',['$http','$ionicLoading',function ($http,$ionicLoading) {
       this.sendRequest=function (url,successCallback) {
         $ionicLoading.show({
-          template:'loading...'
+          template:'<ion-spinner icon="dots" class="spinner-dark"></ion-spinner>'
         });
         $http.get(url).success(function (data) {
           $ionicLoading.hide();
@@ -25,17 +25,37 @@ angular.module('myApp',['ionic'])
       //登录注册
       .state('login',{
         url:'/Login',
-        templateUrl:'pages/login/login.html'
+        templateUrl:'pages/login/login.html',
+        controller:'loginCtrl'
       })
       .state('register',{
         url:'/Register',
         templateUrl:'pages/login/register.html',
         controller:'registerCtrl'
       })
+      .state('find',{
+        url:'/Find',
+        templateUrl:'pages/login/find.html',
+        controller:'findCtrl'
+      })
+      .state('password',{
+        url:'/Password',
+        templateUrl:'pages/login/password.html',
+        controller:'passwordCtrl'
+      })
       //首页
       .state('home',{
         url:'/Home',
-        templateUrl:'pages/home/home.html'
+        templateUrl:'pages/home/home.html',
+        controller:'homeCtrl'
+      })
+      .state('home.lock',{
+        url:'/Lock',
+        templateUrl:'pages/home/lock.html'
+      })
+      .state('home.message',{
+        url:'/Message',
+        templateUrl:'pages/home/message.html'
       })
       //test
       .state('test',{
@@ -58,9 +78,52 @@ angular.module('myApp',['ionic'])
       return $ionicHistory.backTitle();
     };
   }])
+
+  //登录页控制器
+  .controller('loginCtrl',['$scope','$ionicPopup','$state',function ($scope,$ionicPopup,$state) {
+    $scope.form = {};
+    $scope.save = function () {
+      console.log($scope.form);
+      let popAlert = $ionicPopup.alert({
+        title:'帐号不存在',
+        okText:'知道啦'
+      })
+      popAlert.then(function (e) {
+        $state.go('home.lock')
+      })
+    }
+  }])
+
+  //注册页控制器
   .controller('registerCtrl',['$scope',function ($scope) {
 
   }])
+
+  //找回密码控制器
+  .controller('findCtrl',['$scope',function ($scope) {
+
+  }])
+
+  //修改密码控制器
+  .controller('passwordCtrl',['$scope',function ($scope) {
+
+  }])
+
+  //首页控制器
+  .controller('homeCtrl',['$scope','$ionicModal',function ($scope,$ionicModal) {
+    $scope.uName = 13054987649;
+    $ionicModal.fromTemplateUrl('pages/home/sideLeft.html',{
+      scope: $scope,
+      animation: 'slide-in-left'
+    }).then(function (modal) {
+      $scope.modal = modal;
+    });
+    $scope.createContact = function(u) {
+      $scope.contacts.push({ name: u.firstName + ' ' + u.lastName });
+      $scope.modal.hide();
+    };
+  }])
+
 
   // app.initialize();
 //完成读操作

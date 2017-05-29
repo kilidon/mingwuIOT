@@ -11,12 +11,80 @@ $light-blue: lighten($primary-blue, 25%);
   a {
     text-decoration: none;
   }
+
+  .card{
+    padding: 0;
+  }
+  //颜色
   .bg-blue{
     background-color: $primary-blue;
+  }
+  .button.button-positive{
+    background-color: $light-blue;
+    &.activated{
+      background-color: $primary-blue;
+    }
   }
   .light-blue{
     background-color: $light-blue;
   }
+  //导航文字颜色
+  .bar-light .button.button-clear,.bar.bar-light .title{
+    color: $primary-blue;
+  }
+  //提示框
+  .popup{
+    .popup-buttons{
+      padding:0;
+      min-height: 30px;
+      border-top: 1px dashed $light-blue;
+      .button{
+        border-radius: 0;
+      }
+    }
+    .popup-head{
+      min-height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .popup-title{
+        color: $primary-blue;
+        font-size: 16px;
+      }
+    }
+  }
+  //侧边弹出框
+  .modal-backdrop-bg{
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .hide .modal-backdrop-bg{
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .active .modal-backdrop-bg{
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .slide-in-left {
+    box-shadow: 0 0 80px;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); };
+
+  .slide-in-left.ng-enter,
+  .slide-in-left > .ng-enter {
+    -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+    transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+  .slide-in-left.ng-enter-active,
+  .slide-in-left > .ng-enter-active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+  .slide-in-left.ng-leave,
+  .slide-in-left > .ng-leave {
+    -webkit-transition: all ease-in-out 250ms;
+    transition: all ease-in-out 250ms; }
+
+
 
 
 .login-wrapper {
@@ -48,7 +116,7 @@ $light-blue: lighten($primary-blue, 25%);
       .iot-icon-a {
         padding: 0 20px;
         border-left: 1px dashed $light-blue;
-        right: 70px;
+        right: 80px;
         background: none;
         border-radius: 0;
         font-size: 16px;
@@ -62,7 +130,7 @@ $light-blue: lighten($primary-blue, 25%);
         right: 0;
         text-align: center;
         line-height: 60px;
-        font-size: 16px;
+        font-size: 18px;
         border-radius: 0;
         color: #fff;
         background: $light-blue;

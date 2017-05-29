@@ -1,1 +1,31 @@
-<ion-view></ion-view>
+<!--<ion-nav-bar class="bar-light" align-title="center">-->
+  <!--<ion-nav-back-button class="button-clear">-->
+    <!--<i class="icon ion-ios-arrow-back"></i>返回-->
+  <!--</ion-nav-back-button>-->
+<!--</ion-nav-bar>-->
+<ion-view>
+  <ion-nav-bar class="bar-light" align-title="center">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-person" ng-click="modal.show()"></button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+      <div style="padding-top: 6px;">
+        <img src="images/logo_1@2x.png" width="50">
+      </div>
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-android-volume-up"  ui-sref="home.message"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-tabs class="tabs-icon-top">
+    <ion-tab title="管理" href="#/uMain/Daily" on-select="tabSelected()" icon-on="mc-bar-daily" icon-off="mc-bar-dailyo">
+      <ion-nav-view name="daily-tab"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="门锁" href="#/uMain/Wish" icon-on="mc-bar-wish" icon-off="mc-bar-wisho">
+      <ion-nav-view name="wish-tab"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="我的" href="#/uMain/Trends" icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
+      <ion-nav-view name="-tab"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+</ion-view>

@@ -1,22 +1,24 @@
 <ion-view title="登录" hide-nav-bar="true">
   <ion-content class="login-wrapper">
-    <div style="width: 30%;margin-top: 60px">
+    <div style="width: 200px;margin-top: 60px">
       <img src="images/loginlogo_1@2x.png" width="100%">
     </div>
-    <div class="list card" style="width: 90%;margin-top:20%">
-      <div class="item item-icon-left">
-        <i class="icon ion-android-phone-portrait"></i>
-        <input type="text" placeholder="请输入手机号码">
+    <form name="login_form" ng-submit="save()">
+      <div class="list card" style="width: 90%;margin-top:10vh">
+        <div class="item item-icon-left">
+          <i class="icon ion-android-phone-portrait"></i>
+          <input type="tel" ng-model="form.phone" name="phone" placeholder="请输入手机号码" maxlength="11">
+        </div>
+        <div class="item item-icon-left item-icon-right">
+          <i class="icon ion-ios-locked"></i>
+          <input type="password" ng-model="form.pwd" name="pwd" placeholder="请输入密码">
+          <input nav-direction="enter" type="submit" ng-disabled="!(form.phone && form.pwd)" class="button icon iot-icon-btn" value="登 录">
+        </div>
       </div>
-      <div class="item item-icon-left item-icon-right">
-        <i class="icon ion-ios-locked"></i>
-        <input type="password" placeholder="请输入密码">
-        <a href="#" class="button icon iot-icon-btn">登 录</a>
-      </div>
-    </div>
-    <div class="card button-bar iot-bar-log" style="width: 90%;margin-top: 30%">
+    </form>
+    <div class="card button-bar iot-bar-log" style="width: 90%;margin-top: 20vh">
       <a ui-sref="register" class="button">注册</a>
-      <a href="#/Test" class="button">忘记密码</a>
+      <a ui-sref="find" class="button">忘记密码</a>
     </div>
   </ion-content>
 </ion-view>

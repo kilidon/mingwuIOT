@@ -7,11 +7,67 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 a {
   text-decoration: none; }
 
+.card {
+  padding: 0; }
+
 .bg-blue {
   background-color: #126DB5; }
 
+.button.button-positive {
+  background-color: #58acee; }
+  .button.button-positive.activated {
+    background-color: #126DB5; }
+
 .light-blue {
   background-color: #58acee; }
+
+.bar-light .button.button-clear, .bar.bar-light .title {
+  color: #126DB5; }
+
+.popup .popup-buttons {
+  padding: 0;
+  min-height: 30px;
+  border-top: 1px dashed #58acee; }
+  .popup .popup-buttons .button {
+    border-radius: 0; }
+.popup .popup-head {
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .popup .popup-head .popup-title {
+    color: #126DB5;
+    font-size: 16px; }
+
+.modal-backdrop-bg {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+
+.hide .modal-backdrop-bg {
+  background-color: transparent; }
+
+.active .modal-backdrop-bg {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.slide-in-left {
+  box-shadow: 0 0 80px;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0); }
+
+.slide-in-left.ng-enter,
+.slide-in-left > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+.slide-in-left.ng-enter-active,
+.slide-in-left > .ng-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slide-in-left.ng-leave,
+.slide-in-left > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms; }
 
 .login-wrapper {
   background-color: #126DB5; }
@@ -39,7 +95,7 @@ a {
       .login-wrapper .card .item .iot-icon-a {
         padding: 0 20px;
         border-left: 1px dashed #58acee;
-        right: 70px;
+        right: 80px;
         background: none;
         border-radius: 0;
         font-size: 16px;
@@ -52,7 +108,7 @@ a {
         right: 0;
         text-align: center;
         line-height: 60px;
-        font-size: 16px;
+        font-size: 18px;
         border-radius: 0;
         color: #fff;
         background: #58acee; }

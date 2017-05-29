@@ -5638,7 +5638,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   .popup-open.modal-open .modal {
     pointer-events: none; }
   .popup-open .popup-backdrop, .popup-open .popup {
-    pointer-events: auto; }
+    pointer-events: auto; border-radius: 8px; overflow: hidden}
 
 /**
  * Loading
